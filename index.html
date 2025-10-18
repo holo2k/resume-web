@@ -80,7 +80,21 @@
 
   <div class="section">
     <h2>Проекты</h2>
-
+    <div class="project">
+    <p><strong>DeputyApp</strong> | C#, ASP.NET Core 9, Avalonia, MinIO, PostgreSQL, EF Core, Docker <em>(2025)</em></p>
+    <ul>
+      <li>Победитель хакатона «РадиоХак 2.0 — 2025», Екатеринбург.</li>
+      <li>Спроектировал архитектуру микросервисного приложения на .NET 9 с разделением на слои: Presentation, Application, Infrastructure, Domain.</li>
+      <li>Реализовал backend для системы управления документами и публикациями депутатов.</li>
+      <li>Настроил аутентификацию через JWT и Keycloak; настроил CORS и документацию Swagger/OpenAPI.</li>
+      <li>Разработал хранение файлов в MinIO и выдачу presigned URL для фронтенда.</li>
+      <li>Интегрировал Telegram Bot API для уведомлений и настроил логирование через Serilog.</li>
+      <li>Собрал docker-compose окружение с PostgreSQL, MinIO и API; обеспечил автоматическую миграцию базы данных при старте.</li>
+      <li>Написал и отладил unit-тесты для AuthService, PostService, EventService и DocumentService.</li>
+      <li>Координировал backend-разработку в команде и участвовал в финальной презентации проекта.</li>
+      <li>Ведутся переговоры с Думой Екатеринбурга по пилотному внедрению.</li>
+    </ul>
+  </div>
     <div class="project">
       <p><strong>AccountService</strong> | C#, ASP.NET Core 9, PostgreSQL, EF Core, MediatR, Docker, Keycloak, RabbitMQ, Hangfire <em>(2025)</em></p>
       <ul>
@@ -148,14 +162,17 @@
     </div>
   </div>
 
-  <div class="section">
-    <h2>Технические навыки</h2>
-    <ul>
-      <li><strong>Языки:</strong> C#, SQL (PostgreSQL, MSSQL, MySQL), JavaScript, HTML/CSS</li>
-      <li><strong>Фреймворки:</strong> ASP.NET Core, WPF, Blazor, Monogame, Entity Framework Core</li>
-      <li><strong>Инструменты:</strong> Git, Docker, VS Code, Visual Studio, Postman, CI/CD, Keycloak, RabbitMQ, Hangfire, Testcontainers</li>
-      <li><strong>Библиотеки:</strong> Dapper, Quartz, MediatR, FluentValidation, SignalR, AutoMapper, ASP.NET Identity</li>
-    </ul>
-  </div>
+  <section class="Section">
+  <h2>Технические навыки</h2>
+  <ul>
+    <li><strong>Языки:</strong> C#, SQL (PostgreSQL, MSSQL, MySQL), JavaScript, HTML/CSS</li>
+    <li><strong>Фреймворки и технологии:</strong> ASP.NET Core 9, EF Core 9, MediatR, FluentValidation, AutoMapper, Avalonia, Blazor, WPF</li>
+    <li><strong>Безопасность и авторизация:</strong> Keycloak, JWT, OAuth 2.0, CORS, HTTPS, ASP.NET Identity</li>
+    <li><strong>Хранилища и интеграции:</strong> MinIO (S3), Redis, RabbitMQ, Hangfire, gRPC, REST API, Telegram Bot API</li>
+    <li><strong>Инфраструктура:</strong> Docker, Docker Compose, CI/CD (GitHub Actions), Testcontainers, Serilog, Swagger/OpenAPI</li>
+    <li><strong>Инструменты:</strong> Visual Studio, VS Code, Git, Postman, DBeaver, Linux, PowerShell</li>
+    <li><strong>Архитектура</strong> DDD, Clean Architecture, Onion</li>
+  </ul>
+</section>
 </body>
 </html>
