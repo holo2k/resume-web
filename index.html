@@ -10,6 +10,7 @@
   <style>
     :root {
       --primary: #2563eb;
+      --primary-hover: #1d4ed8;
       --text-main: #1f2937;
       --text-light: #6b7280;
       --bg: #f9fafb;
@@ -109,7 +110,61 @@
       font-weight: 600;
     }
 
-    ul { padding-left: 20px; margin-top: 8px; }
+    /* Стили для раскрывающегося списка */
+    details {
+      margin-top: 10px;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    summary {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      user-select: none;
+      outline: none;
+      transition: color 0.2s ease;
+    }
+
+    summary:hover {
+      color: var(--primary-hover);
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::before {
+      content: '→';
+      display: inline-block;
+      margin-right: 8px;
+      transition: transform 0.2s ease;
+      font-size: 12px;
+    }
+
+    details[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    details[open] summary {
+      margin-bottom: 10px;
+    }
+
+    ul { 
+      padding-left: 20px; 
+      margin-top: 0;
+      animation: fadeIn 0.4s ease-out; 
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     li { margin-bottom: 6px; position: relative; }
 
     .skills-grid {
@@ -150,13 +205,16 @@
         <span class="date">Ноябрь 2025 — н.в.</span>
       </div>
       <div class="org">Модульбанк</div>
-      <ul>
-        <li>Участвовал в разработке внутренних сервисов банка, изучал архитектуру и работал с API.</li>
-        <li>Реализовывал бизнес-логику, исправлял баги и писал юнит-тесты.</li>
-        <li>Перенёс старый процесс регистрации точки мобильного эквайринга на новый</li>
-        <li>Участвовал в разработке сервисов для интеграции цифрового рубля</li>
-        <li>Участвовал в код-ревью и командных процессах разработки.</li>
-      </ul>
+      <details>
+        <summary>Подробности</summary>
+        <ul>
+          <li>Участвовал в разработке внутренних сервисов банка, изучал архитектуру и работал с API.</li>
+          <li>Реализовывал бизнес-логику, исправлял баги и писал юнит-тесты.</li>
+          <li>Перенёс старый процесс регистрации точки мобильного эквайринга на новый.</li>
+          <li>Участвовал в разработке сервисов для интеграции цифрового рубля.</li>
+          <li>Участвовал в код-ревью и командных процессах разработки.</li>
+        </ul>
+      </details>
     </div>
 
     <div class="item">
@@ -165,10 +223,13 @@
         <span class="date">Декабрь 2021 — Июнь 2022</span>
       </div>
       <div class="org">ОАО "КУМЗ"</div>
-      <ul>
-        <li>Разработал службу интеграции данных между Paradox и MSSQL (C#, WPF, Windows Services, EF).</li>
-        <li>Работал с легаси-кодом на Delphi, оптимизировал существующие процессы.</li>
-      </ul>
+      <details>
+        <summary>Подробности</summary>
+        <ul>
+          <li>Разработал службу интеграции данных между Paradox и MSSQL (C#, WPF, Windows Services, EF).</li>
+          <li>Работал с легаси-кодом на Delphi, оптимизировал существующие процессы.</li>
+        </ul>
+      </details>
     </div>
   </section>
 
@@ -181,25 +242,33 @@
         <span class="date">2025</span>
       </div>
       <div class="tech-stack">.NET, Avalonia, PostgreSQL, gRPC, MinIO, Redis, Keycloak, Docker</div>
-      <ul>
-        <li>Разработал кроссплатформенное приложение (Win, Linux, Mac, Android) для управления рекламными экранами.</li>
-        <li>Реализовал поддержку видео, изображений и динамических таблиц с данными.</li>
-        <li>Создал систему синхронизации через REST API и backend для формирования конфигураций.</li>
-      </ul>
+      <details>
+        <summary>Что сделано</summary>
+        <ul>
+          <li>Разработал кроссплатформенное приложение (Win, Linux, Mac, Android) для управления рекламными экранами.</li>
+          <li>Реализовал поддержку видео, изображений и динамических таблиц с данными.</li>
+          <li>Создал систему привязки экранов к админке и синхронизации через REST API.</li>
+          <li>Написал backend для управления экранами и формирования конфигураций.</li>
+        </ul>
+      </details>
     </div>
 
     <div class="item">
       <div class="item-header">
         <span class="title">Deputy App (Победитель хакатона «РадиоХак 2.0»)</span>
-        <span class="date">2025</span>
+        <span class="date">2025 — 2026</span>
       </div>
-      <div class="tech-stack">C#, ASP.NET Core 9, Avalonia, Minio, PostgreSQL, EF Core, Docker</div>
-      <ul>
-        <li>Спроектировал многослойную микросервисную архитектуру на .NET 9.</li>
-        <li>Реализовал систему управления документами с хранением в MinIO через presigned URLs.</li>
-        <li>Интегрировал Telegram API для уведомлений и JWT-аутентификацию.</li>
-        <li>Настроил автоматическую миграцию БД и docker-compose окружение.</li>
-      </ul>
+      <div class="tech-stack">C#, ASP.NET Core 9, Avalonia, MinIO, PostgreSQL, EF Core, Docker</div>
+      <details>
+        <summary>Что сделано</summary>
+        <ul>
+          <li>Спроектировал многослойную микросервисную архитектуру на .NET 9.</li>
+          <li>Реализовал backend для системы управления документами и публикациями депутатов.</li>
+          <li>Разработал хранение файлов в MinIO и выдачу presigned URL для фронтенда.</li>
+          <li>Интегрировал Telegram Bot API для уведомлений и настроил логирование через Serilog.</li>
+          <li>Координировал backend-разработку и обеспечил автоматическую миграцию БД при запуске.</li>
+        </ul>
+      </details>
     </div>
 
     <div class="item">
@@ -207,12 +276,111 @@
         <span class="title">Account Service</span>
         <span class="date">2025</span>
       </div>
-      <div class="tech-stack">ASP.NET Core 9, MediatR, Keycloak, RabbitMQ, Hangfire</div>
-      <ul>
-        <li>Реализовал REST API для банковских транзакций и начисления процентов.</li>
-        <li>Внедрил Outbox pattern и RabbitMQ для гарантированной доставки событий.</li>
-        <li>Использовал Testcontainers для интеграционного тестирования.</li>
-      </ul>
+      <div class="tech-stack">C#, ASP.NET Core 9, MediatR, Keycloak, RabbitMQ, Hangfire</div>
+      <details>
+        <summary>Что сделано</summary>
+        <ul>
+          <li>Реализовал REST API для управления банковскими счетами и транзакциями.</li>
+          <li>Внедрил Outbox pattern и RabbitMQ для гарантированной доставки событий.</li>
+          <li>Интегрировал Keycloak (JWT) и Hangfire для Cron-задач.</li>
+          <li>Написал модульные и интеграционные тесты с использованием xUnit и Testcontainers.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Internship Records</span>
+        <span class="date">2025</span>
+      </div>
+      <div class="tech-stack">C#, ASP.NET Core, Blazor WASM, EF Core, SignalR, Fluent Validation</div>
+      <details>
+        <summary>Что сделано</summary>
+        <ul>
+          <li>Разработал веб-приложение для учёта стажёров с фильтрацией, поиском и пагинацией.</li>
+          <li>Реализовал real-time обновления через SignalR и CQRS (MediatR).</li>
+          <li>Организовал многослойную архитектуру (Web, Application, Infrastructure, Domain).</li>
+          <li>Реализовал multi-select привязку сущностей и защиту от удаления связанных данных.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Boardly</span>
+        <span class="date">2025</span>
+      </div>
+      <div class="tech-stack">C#, ASP.NET Core, PostgreSQL, EF Core, Docker, Kafka</div>
+      <details>
+        <summary>Что сделано</summary>
+        <ul>
+          <li>Разработал backend веб-приложения для управления проектами и задачами (boardly.ru).</li>
+          <li>Реализовал функционал создания досок и перемещения задач между колонками.</li>
+          <li>Добавил сбор и отображение аналитических метрик по загруженности команды.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Alfa Billing</span>
+        <span class="date">2025</span>
+      </div>
+      <div class="tech-stack">C#, ASP.NET Core, PostgreSQL, Quartz, JWT, Docker</div>
+      <details>
+        <summary>Что сделано</summary>
+        <ul>
+          <li>Разработал архитектуру приложения и реализовал основные CRUD-операции.</li>
+          <li>Настроил планировщик Quartz для автоматического списания средств и напоминаний.</li>
+          <li>Реализовал разграничение ролей пользователей с помощью JWT.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Web Clicker</span>
+        <span class="date">2024</span>
+      </div>
+      <div class="tech-stack">C#, ASP.NET Core, MySql, EF, MediatR, Identity</div>
+      <details>
+        <summary>Что сделано</summary>
+        <ul>
+          <li>Разработал браузерную игру в стиле "куки-кликера".</li>
+          <li>Использовал MediatR для обработки запросов к API.</li>
+          <li>Реализовал систему авторизации через ASP.NET Identity.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Show Work</span>
+        <span class="date">2024</span>
+      </div>
+      <div class="tech-stack">C#, ASP.NET Core MVC, Razor, JavaScript, Dapper, MSSQL</div>
+      <details>
+        <summary>Что сделано</summary>
+        <ul>
+          <li>Разработал основной функционал, архитектуру приложения и CRUD-операции.</li>
+          <li>Использовал Razor Pages для отрисовки динамических элементов страницы.</li>
+          <li>Написал Unit-тесты для проверки работоспособности модулей.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">The Binding Of Student</span>
+        <span class="date">2024</span>
+      </div>
+      <div class="tech-stack">C#, Monogame</div>
+      <details>
+        <summary>Что сделано</summary>
+        <ul>
+          <li>Создал 2D Roguelike-игру с процедурной генерацией комнат и противников.</li>
+        </ul>
+      </details>
     </div>
   </section>
 
@@ -239,19 +407,19 @@
     <div class="skills-grid">
       <div class="skill-category">
         <strong>Языки</strong>
-        <span>C#, SQL (PostgreSQL, MSSQL, MySQL), JavaScript</span>
+        <span>C#, SQL (PostgreSQL, MSSQL, MySQL), JavaScript, HTML/CSS</span>
       </div>
       <div class="skill-category">
         <strong>Backend</strong>
-        <span>ASP.NET Core 9, EF Core, MediatR, gRPC, RabbitMQ</span>
+        <span>ASP.NET Core 9, EF Core 9, MediatR, gRPC, RabbitMQ, Kafka</span>
       </div>
       <div class="skill-category">
-        <strong>Desktop & Web</strong>
-        <span>Avalonia, Blazor, WPF, Razor Pages</span>
+        <strong>Frontend & UI</strong>
+        <span>Avalonia (Desktop/Mobile), Blazor WASM, WPF, Razor, SignalR</span>
       </div>
       <div class="skill-category">
         <strong>Инструменты</strong>
-        <span>Docker, CI/CD, Keycloak, Redis, MinIO, Linux</span>
+        <span>Docker, CI/CD, Keycloak, Redis, MinIO, Testcontainers, Linux</span>
       </div>
     </div>
   </section>
