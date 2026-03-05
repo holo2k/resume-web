@@ -2,187 +2,259 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Резюме — Беликов Никита</title>
+  <title>Беликов Никита — Software Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #2563eb;
+      --text-main: #1f2937;
+      --text-light: #6b7280;
+      --bg: #f9fafb;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; }
+
     body { 
-      font-family: "Segoe UI", Arial, sans-serif; 
-      margin: 40px auto; 
-      max-width: 900px; 
+      font-family: 'Inter', sans-serif; 
+      margin: 0;
+      padding: 40px 20px;
       line-height: 1.6; 
-      color: #222; 
-      background-color: #fafafa;
+      color: var(--text-main); 
+      background-color: var(--bg);
     }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 50px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
     h1 { 
-      font-size: 28px; 
-      margin-bottom: 5px;
-      color: #111;
+      font-size: 36px; 
+      margin: 0 0 10px 0;
+      font-weight: 700;
+      letter-spacing: -0.025em;
     }
+
     h2 { 
-      border-bottom: 2px solid #ddd; 
-      padding-bottom: 5px; 
-      margin-top: 35px;
       font-size: 20px;
-      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      margin-top: 40px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
     }
-    .section { margin-bottom: 25px; }
-    ul { list-style: none; padding-left: 0; }
-    li { margin-bottom: 6px; }
-    strong { color: #000; }
-    em { color: #555; }
-    .contact { 
-      font-size: 14px; 
-      margin-top: -10px; 
-      margin-bottom: 20px; 
-      color: #444;
+
+    h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+      margin-left: 15px;
     }
-    .contact a { 
-      color: #0056b3; 
-      text-decoration: none; 
+
+    .contact-info { 
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 14px;
+      color: var(--text-light);
     }
-    .contact a:hover { 
-      text-decoration: underline; 
+
+    .contact-info a { 
+      color: var(--primary); 
+      text-decoration: none;
+      font-weight: 500;
     }
-    .project, .job { margin-bottom: 20px; }
-    .project ul, .job ul { margin-top: 8px; margin-bottom: 0; padding-left: 18px; list-style: disc; }
-    .job p, .project p { margin-bottom: 4px; }
-    .project strong { color: #222; }
+
+    .contact-info a:hover { text-decoration: underline; }
+
+    .item { margin-bottom: 30px; }
+    
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 5px;
+    }
+
+    .title { font-weight: 700; font-size: 18px; }
+    .org { font-weight: 600; color: #4b5563; }
+    .date { font-size: 14px; color: var(--text-light); font-variant-numeric: tabular-nums; }
+
+    .tech-stack {
+      font-size: 13px;
+      background: #eff6ff;
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    ul { padding-left: 20px; margin-top: 8px; }
+    li { margin-bottom: 6px; position: relative; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-category strong { display: block; margin-bottom: 5px; color: #111; }
+    .skill-category span { font-size: 14px; color: var(--text-light); }
+
+    @media (max-width: 600px) {
+      .container { padding: 20px; }
+      .item-header { flex-direction: column; }
+      h1 { font-size: 28px; }
+    }
   </style>
 </head>
 <body>
-  <h1>Беликов Никита</h1>
-  <p class="contact">
-    📞 +7-908-926-00-75 | ✉️ <a href="mailto:nneketaa@yandex.ru">nneketaa@yandex.ru</a> | 
-    <a href="https://github.com/holo2k" target="_blank">github.com/holo2k</a> | 
-    <a href="https://t.me/holo21k" target="_blank">t.me/holo21k</a>
-  </p>
 
-  <div class="section">
-    <h2>Образование</h2>
-    <p><strong>Уральский Федеральный Университет</strong>, Екатеринбург, Россия<br>
-    Бакалавр, Прикладная информатика — <em>2023 – н.в.</em></p>
+<div class="container">
+  <header>
+    <h1>Беликов Никита</h1>
+    <div class="contact-info">
+      <span>📞 +7-908-926-00-75</span>
+      <a href="mailto:nneketaa@yandex.ru">✉️ nneketaa@yandex.ru</a>
+      <a href="https://github.com/holo2k" target="_blank">🐙 github.com/holo2k</a>
+      <a href="https://t.me/holo21k" target="_blank">✈️ t.me/holo21k</a>
+    </div>
+  </header>
 
-    <p><strong>Каменск-Уральский Политехнический Колледж</strong>, Каменск-Уральский, Россия<br>
-    Специалист по информационным системам и программированию — <em>2018 – 2022</em></p>
-  </div>
-
-  <div class="section">
+  <section>
     <h2>Опыт работы</h2>
-    <div class="job">
-      <p><strong>Инженер-программист</strong> — ОАО «КУМЗ», Каменск-Уральский, Россия<br>
-      <em>Декабрь 2021 – Июнь 2022</em></p>
+    
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Младший инженер-разработчик</span>
+        <span class="date">Ноябрь 2025 — н.в.</span>
+      </div>
+      <div class="org">Модульбанк</div>
       <ul>
-        <li>Разработал службу интеграции данных между локальной базой Paradox и удалённой MSSQL с использованием C#, WPF, Windows Services и Entity Framework.</li>
-        <li>Работал с легаси-кодом на Delphi, анализировал и оптимизировал процессы.</li>
+        <li>Участвовал в разработке внутренних сервисов банка, изучал архитектуру и работал с API.</li>
+        <li>Писал документацию для переноса CRM системы.</li>
+        <li>Реализовывал бизнес-логику, исправлял баги и писал юнит-тесты.</li>
+        <li>Участвовал в код-ревью и командных процессах разработки.</li>
       </ul>
     </div>
-    <div class="job">
-  <p><strong>Инженер-стажёр</strong> — Модульбанк, Россия<br>
-  <em>Ноябрь 2025 – Декабрь 2025</em></p>
-  <ul>
-    <li>Участвовал в разработке внутренних сервисов банка на C# и ASP.NET, выполняя задачи под руководством наставника.</li>
-    <li>Разбирался в существующей архитектуре, работал с REST API</li>
-    <li>Писал и дорабатывал бизнес-логику, писал юнит-тесты и исправлял баги.</li>
-    <li>Принимал участие в код-ревью и изучал практики командной разработки.</li>
-  </ul>
-</div>
-  </div>
 
-  <div class="section">
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Инженер-программист</span>
+        <span class="date">Декабрь 2021 — Июнь 2022</span>
+      </div>
+      <div class="org">ОАО "КУМЗ"</div>
+      <ul>
+        <li>Разработал службу интеграции данных между Paradox и MSSQL (C#, WPF, Windows Services, EF).</li>
+        <li>Работал с легаси-кодом на Delphi, оптимизировал существующие процессы.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
     <h2>Проекты</h2>
-    <div class="project">
-    <p><strong>DeputyApp</strong> | C#, ASP.NET Core 9, Avalonia, MinIO, PostgreSQL, EF Core, Docker <em>(2025)</em></p>
-    <ul>
-      <li>Победитель хакатона «РадиоХак 2.0 — 2025», Екатеринбург.</li>
-      <li>Спроектировал архитектуру приложения на .NET 9 с разделением на слои.</li>
-      <li>Реализовал backend для системы управления документами и публикациями депутатов.</li>
-      <li>Разработал хранение файлов в MinIO и выдачу presigned URL для фронтенда.</li>
-      <li>Настроил аутентификацию</li>
-      <li>Интегрировал Telegram Bot API для уведомлений и настроил логирование через Serilog.</li>
-      <li>Собрал docker-compose окружение с PostgreSQL, MinIO и API; обеспечил автоматическую миграцию базы данных при старте.</li>
-      <li>Написал и отладил unit-тесты.</li>
-      <li>Координировал backend-разработку в команде и участвовал в финальной презентации проекта.</li>
-      <li>В данный момент ведутся переговоры с Думой Екатеринбурга по пилотному внедрению.</li>
-    </ul>
-  </div>
-    <div class="project">
-      <p><strong>AccountService</strong> | C#, ASP.NET Core 9, PostgreSQL, EF Core, MediatR, Docker, Keycloak, RabbitMQ, Hangfire <em>(2025)</em></p>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Advert Control</span>
+        <span class="date">2025</span>
+      </div>
+      <div class="tech-stack">.NET, Avalonia, PostgreSQL, gRPC, MinIO, Redis, Keycloak, Docker</div>
       <ul>
-        <li>Реализовал REST API для управления банковскими счетами и транзакциями.</li>
-        <li>Добавил CRUD для счетов и транзакций, переводы, выписки и начисление процентов.</li>
-        <li>Интегрировал Keycloak (JWT) и Hangfire для Cron-задач.</li>
-        <li>Реализовал Outbox pattern и интеграцию с RabbitMQ для гарантированной доставки событий.</li>
-        <li>Написал модульные и интеграционные тесты (xUnit, Testcontainers).</li>
+        <li>Разработал кроссплатформенное приложение (Win, Linux, Mac, Android) для управления рекламными экранами.</li>
+        <li>Реализовал поддержку видео, изображений и динамических таблиц с данными.</li>
+        <li>Создал систему синхронизации через REST API и backend для формирования конфигураций.</li>
       </ul>
     </div>
 
-    <div class="project">
-      <p><strong>InternshipRecords</strong> | C#, ASP.NET Core, Blazor WASM, EF Core, MediatR, FluentValidation, SignalR, Docker <em>(2025)</em></p>
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Deputy App (Победитель хакатона «РадиоХак 2.0»)</span>
+        <span class="date">2025</span>
+      </div>
+      <div class="tech-stack">C#, ASP.NET Core 9, Avalonia, Minio, PostgreSQL, EF Core, Docker</div>
       <ul>
-        <li>Веб-приложение для учёта стажёров с CRUD для сущностей.</li>
-        <li>Добавил фильтрацию, поиск, пагинацию и real-time обновления (SignalR).</li>
-        <li>Использовал CQRS (MediatR) и FluentValidation.</li>
-        <li>Организовал архитектуру по слоям: Web, Application, Infrastructure, Domain, Client.</li>
+        <li>Спроектировал многослойную микросервисную архитектуру на .NET 9.</li>
+        <li>Реализовал систему управления документами с хранением в MinIO через presigned URLs.</li>
+        <li>Интегрировал Telegram API для уведомлений и JWT-аутентификацию.</li>
+        <li>Настроил автоматическую миграцию БД и docker-compose окружение.</li>
       </ul>
     </div>
 
-    <div class="project">
-      <p><strong>Boardly</strong> | C#, ASP.NET Core, PostgreSQL, EF Core, Docker, Kafka <em>(2025)</em></p>
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Account Service</span>
+        <span class="date">2025</span>
+      </div>
+      <div class="tech-stack">ASP.NET Core 9, MediatR, Keycloak, RabbitMQ, Hangfire</div>
       <ul>
-        <li>Backend веб-приложения для управления проектами и задачами (boardly.ru).</li>
-        <li>Реализовал проекты, доски, задачи, перемещение задач между колонками.</li>
-        <li>Собирал и отображал метрики по задачам и загрузке команды.</li>
-        <li>Настроил контейнеризацию через Docker.</li>
+        <li>Реализовал REST API для банковских транзакций и начисления процентов.</li>
+        <li>Внедрил Outbox pattern и RabbitMQ для гарантированной доставки событий.</li>
+        <li>Использовал Testcontainers для интеграционного тестирования.</li>
       </ul>
     </div>
+  </section>
 
-    <div class="project">
-      <p><strong>Alfa Billing</strong> | C#, ASP.NET Core, PostgreSQL, Quartz, EF, Docker <em>(2025)</em></p>
-      <ul>
-        <li>Разработал архитектуру и CRUD-операции.</li>
-        <li>Настроил Quartz для списания и напоминаний.</li>
-        <li>Реализовал JWT авторизацию и роли.</li>
-        <li>Создал Docker-образ для деплоя.</li>
-      </ul>
+  <section>
+    <h2>Образование</h2>
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Прикладная информатика (Бакалавр)</span>
+        <span class="date">2023 — н.в.</span>
+      </div>
+      <div class="org">Уральский Федеральный Университет</div>
     </div>
-
-    <div class="project">
-      <p><strong>Web Clicker</strong> | C#, ASP.NET Core, MySQL, EF, MediatR, Identity <em>(2024)</em></p>
-      <ul>
-        <li>Браузерная игра «куки-кликер».</li>
-        <li>Использовал MediatR для API.</li>
-        <li>Реализовал авторизацию (ASP.NET Identity).</li>
-      </ul>
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Информационные системы и программирование</span>
+        <span class="date">2018 — 2022</span>
+      </div>
+      <div class="org">Каменск-Уральский Политехнический Колледж</div>
     </div>
+  </section>
 
-    <div class="project">
-      <p><strong>ShowWork</strong> | C#, ASP.NET Core MVC, Razor, JavaScript, Dapper, MSSQL <em>(2024)</em></p>
-      <ul>
-        <li>Разработал архитектуру и CRUD.</li>
-        <li>Написал Unit-тесты.</li>
-        <li>Использовал Razor Pages для UI.</li>
-      </ul>
+  <section>
+    <h2>Технические навыки</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <strong>Языки</strong>
+        <span>C#, SQL (PostgreSQL, MSSQL, MySQL), JavaScript</span>
+      </div>
+      <div class="skill-category">
+        <strong>Backend</strong>
+        <span>ASP.NET Core 9, EF Core, MediatR, gRPC, RabbitMQ</span>
+      </div>
+      <div class="skill-category">
+        <strong>Desktop & Web</strong>
+        <span>Avalonia, Blazor, WPF, Razor Pages</span>
+      </div>
+      <div class="skill-category">
+        <strong>Инструменты</strong>
+        <span>Docker, CI/CD, Keycloak, Redis, MinIO, Linux</span>
+      </div>
     </div>
+  </section>
+</div>
 
-    <div class="project">
-      <p><strong>The Binding Of Student</strong> | C#, Monogame <em>(2024)</em></p>
-      <ul>
-        <li>Создал 2D Roguelike с процедурной генерацией комнат и монстров.</li>
-      </ul>
-    </div>
-  </div>
-
-  <section class="Section">
-  <h2>Технические навыки</h2>
-  <ul>
-    <li><strong>Языки:</strong> C#, SQL (PostgreSQL, MSSQL, MySQL), JavaScript, HTML/CSS</li>
-    <li><strong>Фреймворки и технологии:</strong> ASP.NET Core 9, EF Core 9, MediatR, FluentValidation, AutoMapper, Avalonia, Blazor, WPF</li>
-    <li><strong>Безопасность и авторизация:</strong> Keycloak, JWT, OAuth 2.0, CORS, HTTPS, ASP.NET Identity</li>
-    <li><strong>Хранилища и интеграции:</strong> MinIO (S3), Redis, RabbitMQ, Hangfire, gRPC, REST API, Telegram Bot API</li>
-    <li><strong>Инфраструктура:</strong> Docker, Docker Compose, CI/CD (GitHub Actions), Testcontainers, Serilog, Swagger/OpenAPI</li>
-    <li><strong>Инструменты:</strong> Visual Studio, VS Code, Git, Postman, DBeaver, Linux, PowerShell</li>
-    <li><strong>Архитектура:</strong> DDD, Clean Architecture, Onion</li>
-  </ul>
-</section>
 </body>
 </html>
