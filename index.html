@@ -111,47 +111,50 @@
     }
 
     /* Стили для раскрывающегося списка */
+    /* Обновленные стили для раскрывающихся списков */
     details {
       margin-top: 10px;
-      border-radius: 8px;
-      transition: background 0.3s ease;
     }
-
+    
     summary {
+      list-style: none;
       font-size: 14px;
       font-weight: 600;
       color: var(--primary);
       cursor: pointer;
-      list-style: none;
       display: flex;
       align-items: center;
       user-select: none;
-      outline: none;
-      transition: color 0.2s ease;
     }
-
-    summary:hover {
-      color: var(--primary-hover);
-    }
-
+    
     summary::-webkit-details-marker {
       display: none;
     }
-
+    
+    /* Кастомный индикатор: кружок с плюсом */
     summary::before {
-      content: '→';
-      display: inline-block;
-      margin-right: 8px;
-      transition: transform 0.2s ease;
-      font-size: 12px;
+      content: '+';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border: 1px solid var(--primary);
+      border-radius: 4px;
+      margin-right: 10px;
+      font-size: 14px;
+      line-height: 1;
+      transition: all 0.2s ease;
     }
-
+    
     details[open] summary::before {
-      transform: rotate(90deg);
+      content: '−';
+      background-color: var(--primary);
+      color: white;
     }
-
+    
     details[open] summary {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     ul { 
@@ -205,8 +208,6 @@
         <span class="date">Ноябрь 2025 — н.в.</span>
       </div>
       <div class="org">Модульбанк</div>
-      <details>
-        <summary>Подробности</summary>
         <ul>
           <li>Участвовал в разработке внутренних сервисов банка, изучал архитектуру и работал с API.</li>
           <li>Реализовывал бизнес-логику, исправлял баги и писал юнит-тесты.</li>
@@ -214,7 +215,6 @@
           <li>Участвовал в разработке сервисов для интеграции цифрового рубля.</li>
           <li>Участвовал в код-ревью и командных процессах разработки.</li>
         </ul>
-      </details>
     </div>
 
     <div class="item">
@@ -223,13 +223,10 @@
         <span class="date">Декабрь 2021 — Июнь 2022</span>
       </div>
       <div class="org">ОАО "КУМЗ"</div>
-      <details>
-        <summary>Подробности</summary>
         <ul>
           <li>Разработал службу интеграции данных между Paradox и MSSQL (C#, WPF, Windows Services, EF).</li>
           <li>Работал с легаси-кодом на Delphi, оптимизировал существующие процессы.</li>
         </ul>
-      </details>
     </div>
   </section>
 
@@ -243,7 +240,7 @@
       </div>
       <div class="tech-stack">.NET, Avalonia, PostgreSQL, gRPC, MinIO, Redis, Keycloak, Docker</div>
       <details>
-        <summary>Что сделано</summary>
+        <summary>Подробно..</summary>
         <ul>
           <li>Разработал кроссплатформенное приложение (Win, Linux, Mac, Android) для управления рекламными экранами.</li>
           <li>Реализовал поддержку видео, изображений и динамических таблиц с данными.</li>
@@ -260,7 +257,7 @@
       </div>
       <div class="tech-stack">C#, ASP.NET Core 9, Avalonia, MinIO, PostgreSQL, EF Core, Docker</div>
       <details>
-        <summary>Что сделано</summary>
+        <summary>Подробно..</summary>
         <ul>
           <li>Спроектировал многослойную микросервисную архитектуру на .NET 9.</li>
           <li>Реализовал backend для системы управления документами и публикациями депутатов.</li>
@@ -278,7 +275,7 @@
       </div>
       <div class="tech-stack">C#, ASP.NET Core 9, MediatR, Keycloak, RabbitMQ, Hangfire</div>
       <details>
-        <summary>Что сделано</summary>
+        <summary>Подробно..</summary>
         <ul>
           <li>Реализовал REST API для управления банковскими счетами и транзакциями.</li>
           <li>Внедрил Outbox pattern и RabbitMQ для гарантированной доставки событий.</li>
@@ -295,7 +292,7 @@
       </div>
       <div class="tech-stack">C#, ASP.NET Core, Blazor WASM, EF Core, SignalR, Fluent Validation</div>
       <details>
-        <summary>Что сделано</summary>
+        <summary>Подробно..</summary>
         <ul>
           <li>Разработал веб-приложение для учёта стажёров с фильтрацией, поиском и пагинацией.</li>
           <li>Реализовал real-time обновления через SignalR и CQRS (MediatR).</li>
@@ -312,7 +309,7 @@
       </div>
       <div class="tech-stack">C#, ASP.NET Core, PostgreSQL, EF Core, Docker, Kafka</div>
       <details>
-        <summary>Что сделано</summary>
+        <summary>Подробно..</summary>
         <ul>
           <li>Разработал backend веб-приложения для управления проектами и задачами (boardly.ru).</li>
           <li>Реализовал функционал создания досок и перемещения задач между колонками.</li>
@@ -328,7 +325,7 @@
       </div>
       <div class="tech-stack">C#, ASP.NET Core, PostgreSQL, Quartz, JWT, Docker</div>
       <details>
-        <summary>Что сделано</summary>
+        <summary>Подробно..</summary>
         <ul>
           <li>Разработал архитектуру приложения и реализовал основные CRUD-операции.</li>
           <li>Настроил планировщик Quartz для автоматического списания средств и напоминаний.</li>
@@ -344,7 +341,7 @@
       </div>
       <div class="tech-stack">C#, ASP.NET Core, MySql, EF, MediatR, Identity</div>
       <details>
-        <summary>Что сделано</summary>
+        <summary>Подробно..</summary>
         <ul>
           <li>Разработал браузерную игру в стиле "куки-кликера".</li>
           <li>Использовал MediatR для обработки запросов к API.</li>
@@ -360,7 +357,7 @@
       </div>
       <div class="tech-stack">C#, ASP.NET Core MVC, Razor, JavaScript, Dapper, MSSQL</div>
       <details>
-        <summary>Что сделано</summary>
+        <summary>Подробно..</summary>
         <ul>
           <li>Разработал основной функционал, архитектуру приложения и CRUD-операции.</li>
           <li>Использовал Razor Pages для отрисовки динамических элементов страницы.</li>
@@ -376,7 +373,7 @@
       </div>
       <div class="tech-stack">C#, Monogame</div>
       <details>
-        <summary>Что сделано</summary>
+        <summary>Подробно..</summary>
         <ul>
           <li>Создал 2D Roguelike-игру с процедурной генерацией комнат и противников.</li>
         </ul>
