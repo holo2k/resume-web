@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Беликов Никита — Software Engineer</title>
+  <title>Беликов Никита</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -201,53 +201,69 @@
 
   <section>
     <h2>Опыт работы</h2>
-    
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Стажёр-разработчик (C#/.NET)</span>
+        <span class="date">Июль 2026 — н.в.</span>
+      </div>
+      <div class="org">М.Видео</div>
+      <ul>
+        <li>Участвую в разработке сервиса брака.</li>
+        <li>Реализую бизнес-логику, исправляю баги и пишу юнит-тесты.</li>
+        <li>Участвую в код-ревью и командных процессах разработки.</li>
+      </ul>
+    </div>
+
     <div class="item">
       <div class="item-header">
         <span class="title">Младший инженер-разработчик</span>
-        <span class="date">Ноябрь 2025 — н.в.</span>
+        <span class="date">Ноябрь 2025 — Июль 2026</span>
       </div>
       <div class="org">Модульбанк</div>
-        <ul>
-          <li>Реализовал хранение операций, пополнение счёта, уведомления, передачу операций в фин мониторинг</li>
-          <li>Переводил старые процессы на новые</li>
-          <li>Внедрил reverse-proxy на YARP, добавил логгирование в Graylog и настройку прокси через Consul, микрокэш, coalescing</li>
-          <li>Писал и дорабатывал бизнес-логику, писал юнит-тесты и исправлял баги</li>
-          <li>Принимал участие в код-ревью, дейли, ретро и т.д</li>
-          <li>Принимал участие в разработке на трёх языках (C#, Python, T-SQL)</li>
-        </ul>
+      <ul>
+        <li>Участвовал в разработке внутренних банковских сервисов и интеграций, работал с API и бизнес-процессами.</li>
+        <li>Реализовывал хранение операций, пополнение счёта, уведомления и передачу операций в финансовый мониторинг.</li>
+        <li>Переносил legacy-процессы на новые решения, в том числе процесс регистрации точки мобильного эквайринга.</li>
+        <li>Участвовал в разработке сервисов интеграции цифрового рубля.</li>
+        <li>Разработал reverse proxy на YARP: добавил микрокэширование, request coalescing, настройку через Consul и логирование в Graylog.</li>
+        <li>Разрабатывал и дорабатывал бизнес-логику, исправлял баги и писал unit-тесты.</li>
+        <li>Работал с C#, Python и T-SQL.</li>
+        <li>Участвовал в код-ревью, daily, retro и других командных процессах.</li>
+      </ul>
     </div>
 
     <div class="item">
       <div class="item-header">
-        <span class="title">C#/.NET-разработчик</span>
-        <span class="date">Октябрь 2025 — н.в.</span>
+        <span class="title">Backend-разработчик (C#/.NET)</span>
+        <span class="date">Октябрь 2025 — Июль 2026</span>
       </div>
       <div class="org">Екатеринбургская городская дума</div>
-      <p style="margin: 10px 0 5px 0;">Проектная работа. В рамках решения участвовал в разработке backend-части: был реализован REST API на ASP.NET, а также интеграция с Telegram-ботом.</p>
-        <ul>
-          <li>Спроектировал архитектуру системы</li>
-          <li>Реализовал логику системы</li>
-          <li>Настроил хранение файлов в Minio</li>
-          <li>Добавил уведомления в телеграм-бота и пуш-уведомления через Firebase</li>
-          <li>Настроил планировщик Hangfire</li>
-          <li>Добавил авторизацию и аутентификацию, настройку ролей, привязку помощников к депутатам</li>
-          <li>Занимался выкладкой и настройкой CI/CD сервиса</li>
-        </ul>
+      <p style="margin: 10px 0 5px 0;">Проектная работа над личным кабинетом для депутатов: backend на ASP.NET Core, интеграции, хранение документов и система уведомлений.</p>
+      <ul>
+        <li>Спроектировал архитектуру системы и структуру базы данных.</li>
+        <li>Реализовал REST API и бизнес-логику на ASP.NET Core.</li>
+        <li>Интегрировал единый вход SSO на базе Keycloak, настроил роли и привязку помощников к депутатам.</li>
+        <li>Реализовал взаимодействие с БД через Entity Framework Core и хранение чувствительных данных в зашифрованном виде.</li>
+        <li>Организовал работу с MinIO: загрузку, хранение и защищённое скачивание документов и медиафайлов.</li>
+        <li>Настроил фоновые задачи с Hangfire.</li>
+        <li>Интегрировал Telegram-бота и push-уведомления через Firebase.</li>
+        <li>Участвовал в выкладке сервиса и настройке CI/CD.</li>
+      </ul>
     </div>
 
-  <div class="item">
-    <div class="item-header">
-      <span class="title">Инженер-программист</span>
-      <span class="date">Декабрь 2021 — Июнь 2022</span>
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Инженер-программист</span>
+        <span class="date">Декабрь 2021 — Июнь 2022</span>
+      </div>
+      <div class="org">ОАО «КУМЗ»</div>
+      <ul>
+        <li>Разработал службу интеграции данных между локальной базой Paradox и удалённой MSSQL с использованием C#, WPF, Windows Services и Entity Framework.</li>
+        <li>Работал с legacy-кодом на Delphi, анализировал и оптимизировал процессы обработки данных.</li>
+      </ul>
     </div>
-    <div class="org">ОАО "КУМЗ"</div>
-    <ul>
-      <li>Разработал службу интеграции данных между Paradox и MSSQL (C#, WPF, Windows Services, EF).</li>
-      <li>Работал с легаси-кодом на Delphi, занимался оптимизацией существующих процессов обработки данных.</li>
-    </ul>
-  </div>
-</section>
+  </section>
 
   <section>
     <h2>Проекты</h2>
@@ -255,7 +271,7 @@
     <div class="item">
       <div class="item-header">
         <span class="title">Advert Control</span>
-        <span class="date">2025</span>
+        <span class="date">2026</span>
       </div>
       <div class="tech-stack">.NET, Avalonia, PostgreSQL, gRPC, MinIO, Redis, Keycloak, Docker</div>
       <details>
@@ -278,11 +294,15 @@
       <details>
         <summary>Подробно..</summary>
         <ul>
+          <li>Победитель хакатона «РадиоХак 2.0 — 2025».</li>
           <li>Спроектировал многослойную микросервисную архитектуру на .NET 9.</li>
           <li>Реализовал backend для системы управления документами и публикациями депутатов.</li>
+          <li>Настроил JWT-аутентификацию.</li>
           <li>Разработал хранение файлов в MinIO и выдачу presigned URL для фронтенда.</li>
           <li>Интегрировал Telegram Bot API для уведомлений и настроил логирование через Serilog.</li>
-          <li>Координировал backend-разработку и обеспечил автоматическую миграцию БД при запуске.</li>
+          <li>Собрал docker-compose окружение с PostgreSQL, MinIO и ASP.NET API и настроил автоматическую миграцию БД при запуске.</li>
+          <li>Создал и отладил unit-тесты.</li>
+          <li>Координировал backend-разработку и участвовал в финальной презентации проекта.</li>
         </ul>
       </details>
     </div>
@@ -292,11 +312,12 @@
         <span class="title">Account Service</span>
         <span class="date">2025</span>
       </div>
-      <div class="tech-stack">C#, ASP.NET Core 9, MediatR, Keycloak, RabbitMQ, Hangfire</div>
+      <div class="tech-stack">C#, ASP.NET Core 9, PostgreSQL, EF Core, MediatR, Docker, Keycloak, RabbitMQ, Hangfire</div>
       <details>
         <summary>Подробно..</summary>
         <ul>
           <li>Реализовал REST API для управления банковскими счетами и транзакциями.</li>
+          <li>Добавил CRUD для счетов и транзакций, переводы между счетами, выписки и начисление процентов.</li>
           <li>Внедрил Outbox pattern и RabbitMQ для гарантированной доставки событий.</li>
           <li>Интегрировал Keycloak (JWT) и Hangfire для Cron-задач.</li>
           <li>Написал модульные и интеграционные тесты с использованием xUnit и Testcontainers.</li>
@@ -309,7 +330,7 @@
         <span class="title">Internship Records</span>
         <span class="date">2025</span>
       </div>
-      <div class="tech-stack">C#, ASP.NET Core, Blazor WASM, EF Core, SignalR, Fluent Validation</div>
+      <div class="tech-stack">C#, ASP.NET Core, Blazor WASM, EF Core, MediatR, FluentValidation, SignalR, Docker</div>
       <details>
         <summary>Подробно..</summary>
         <ul>
@@ -332,7 +353,8 @@
         <ul>
           <li>Разработал backend веб-приложения для управления проектами и задачами (boardly.ru).</li>
           <li>Реализовал функционал создания досок и перемещения задач между колонками.</li>
-          <li>Добавил сбор и отображение аналитических метрик по загруженности команды.</li>
+          <li>Добавил сбор и отображение аналитических метрик по задачам и загруженности команды.</li>
+          <li>Настроил контейнеризацию через Docker для развёртывания приложения.</li>
         </ul>
       </details>
     </div>
@@ -421,22 +443,14 @@
   <section>
     <h2>Технические навыки</h2>
     <div class="skills-grid">
-      <div class="skill-category">
-        <strong>Языки</strong>
-        <span>C#, SQL (PostgreSQL, MSSQL, MySQL), Python, JavaScript, HTML/CSS</span>
-      </div>
-      <div class="skill-category">
-        <strong>Backend</strong>
-        <span>.NET 10/9/8, .NET Framework 4.7, EntityFramework, MediatR, gRPC, RabbitMQ, Kafka</span>
-      </div>
-      <div class="skill-category">
-        <strong>Frontend & UI</strong>
-        <span>Avalonia (Desktop/Mobile), Blazor WASM, WPF, Razor </span>
-      </div>
-      <div class="skill-category">
-        <strong>Инструменты</strong>
-        <span>Docker, CI/CD, Keycloak, Redis, MinIO, Linux</span>
-      </div>
+      <div class="skill-category"><strong>Языки</strong><span>C#, SQL (PostgreSQL, MSSQL, MySQL), Python, T-SQL, JavaScript, HTML/CSS</span></div>
+      <div class="skill-category"><strong>Backend</strong><span>.NET 10/9/8, .NET Framework 4.7, ASP.NET Core, EF Core, Dapper, Linq2db, MediatR, FluentValidation, AutoMapper</span></div>
+      <div class="skill-category"><strong>Интеграции</strong><span>REST API, gRPC, Kafka, RabbitMQ, Telegram Bot API, Firebase</span></div>
+      <div class="skill-category"><strong>Безопасность</strong><span>Keycloak, JWT, OAuth 2.0, ASP.NET Identity, CORS, HTTPS, SSO</span></div>
+      <div class="skill-category"><strong>Хранилища и фоновые задачи</strong><span>PostgreSQL, MSSQL, MySQL, Redis, MinIO (S3), Hangfire, Quartz</span></div>
+      <div class="skill-category"><strong>Frontend & UI</strong><span>Avalonia, Blazor WASM, WPF, Razor / Razor Pages</span></div>
+      <div class="skill-category"><strong>Инфраструктура и тестирование</strong><span>Docker, Docker Compose, CI/CD, Testcontainers, xUnit, Serilog, Graylog, Swagger/OpenAPI, Consul</span></div>
+      <div class="skill-category"><strong>Инструменты</strong><span>Visual Studio, VS Code, Git, Postman, DBeaver, Linux, PowerShell, OpenLens, Jira, Mattermost, Confluence</span></div>
     </div>
   </section>
 </div>
